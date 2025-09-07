@@ -11,7 +11,7 @@ interface Message {
   content: string;
 }
 
-const ChatInterface = () => {
+const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
@@ -31,16 +31,26 @@ const ChatInterface = () => {
       // Set test key as fallback so users can immediately try the chat
       setApiKey('test-key-available');
     }
-  }, []);
+
+    // If there's an initial message, send it automatically
+    if (initialMessage && initialMessage.trim()) {
+      setInput(initialMessage);
+      // Auto-send the message after a brief delay
+      setTimeout(() => {
+        handleSendMessage(initialMessage);
+      }, 500);
+    }
+  }, [initialMessage]);
 
   const handleApiKeySet = (newApiKey: string) => {
     setApiKey(newApiKey);
   };
 
-  const handleSend = async () => {
-    if (!input.trim() || isLoading || !apiKey) return;
+  const handleSendMessage = async (messageToSend?: string) => {
+    const message = messageToSend || input;
+    if (!message.trim() || isLoading || !apiKey) return;
 
-    const userMessage: Message = { role: 'user', content: input };
+    const userMessage: Message = { role: 'user', content: message };
     setMessages(prev => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
@@ -58,6 +68,8 @@ const ChatInterface = () => {
       setIsLoading(false);
     }
   };
+
+  const handleSend = () => handleSendMessage();
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {

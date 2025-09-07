@@ -1,7 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { SparklesIcon, GlobeAltIcon, ShieldCheckIcon } from "@heroicons/react/24/outline";
+import { ShieldCheckIcon } from "@heroicons/react/24/outline";
+import mxtkLogo from "@/assets/mxtk-logo.png";
 
-const Footer = () => {
+const Footer = ({ onStartChat }: { onStartChat: (initialMessage?: string) => void }) => {
+
+  const handleQuickQuestion = (question: string) => {
+    onStartChat(question);
+    // Scroll to chat section
+    setTimeout(() => {
+      document.getElementById('chat-section')?.scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+    }, 100);
+  };
   return (
     <footer className="bg-background/95 backdrop-blur-sm border-t border-border/50">
       <div className="max-w-6xl mx-auto px-6 py-12">
@@ -9,15 +20,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-gradient mb-4">Mineral Token</h3>
+            <img src={mxtkLogo} alt="MXTK - Mineral Token" className="h-16 mb-4" />
             <p className="text-muted-foreground mb-4 max-w-md">
               Unlocking liquidity for global mineral holdings through innovative 1:1 asset-backed tokenization.
             </p>
             <div className="flex gap-4">
-              <Button variant="outline" size="sm">
-                <GlobeAltIcon className="w-4 h-4 mr-2" />
-                Website
-              </Button>
               <Button variant="outline" size="sm">
                 <ShieldCheckIcon className="w-4 h-4 mr-2" />
                 Whitepaper
@@ -29,10 +36,30 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Learn</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#tokenization" className="hover:text-foreground transition-colors">How It Works</a></li>
-              <li><a href="#requirements" className="hover:text-foreground transition-colors">Requirements</a></li>
-              <li><a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a></li>
-              <li><a href="#faq" className="hover:text-foreground transition-colors">FAQ</a></li>
+              <li>
+                <button 
+                  onClick={() => handleQuickQuestion("How does MXTK tokenization work? Can you explain the process step by step?")}
+                  className="hover:text-foreground transition-colors text-left"
+                >
+                  How It Works
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleQuickQuestion("What are the requirements to tokenize my mineral assets with MXTK?")}
+                  className="hover:text-foreground transition-colors text-left"
+                >
+                  Requirements
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => handleQuickQuestion("I have questions about MXTK. Can you help me understand the frequently asked questions?")}
+                  className="hover:text-foreground transition-colors text-left"
+                >
+                  FAQ
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -41,8 +68,8 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Connect</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="mailto:info@mineral-token.com" className="hover:text-foreground transition-colors">Contact Us</a></li>
-              <li><a href="https://t.me/mineraltoken" className="hover:text-foreground transition-colors">Telegram</a></li>
-              <li><a href="#careers" className="hover:text-foreground transition-colors">Careers</a></li>
+              <li><a href="https://t.me/mineraltoken" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Telegram</a></li>
+              <li><a href="mailto:career@mineral-token.com" className="hover:text-foreground transition-colors">Careers</a></li>
             </ul>
           </div>
         </div>

@@ -5,8 +5,12 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   const [showChat, setShowChat] = useState(false);
+  const [initialMessage, setInitialMessage] = useState<string>("");
 
-  const handleStartChat = () => {
+  const handleStartChat = (message?: string) => {
+    if (message) {
+      setInitialMessage(message);
+    }
     setShowChat(true);
     // Smooth scroll to chat section
     setTimeout(() => {
@@ -25,13 +29,13 @@ const Index = () => {
       {showChat && (
         <section id="chat-section" className="min-h-screen bg-gradient-hero flex items-center justify-center p-6">
           <div className="w-full flex justify-center">
-            <ChatInterface />
+            <ChatInterface initialMessage={initialMessage} />
           </div>
         </section>
       )}
       
       {/* Footer */}
-      <Footer />
+      <Footer onStartChat={handleStartChat} />
     </div>
   );
 };
