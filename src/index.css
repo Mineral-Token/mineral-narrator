@@ -2,41 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Mineral Token Design System - Modern crypto/fintech aesthetic */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors */
+    --background: 222 14% 5%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 222 14% 7%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 14% 7%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Mineral-inspired Primary Palette */
+    --primary: 158 75% 45%;
+    --primary-foreground: 222 14% 5%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 222 14% 12%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 222 14% 10%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 93% 60%;
+    --accent-foreground: 222 14% 5%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 222 14% 15%;
+    --input: 222 14% 12%;
+    --ring: 158 75% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(158 75% 45%), hsl(158 75% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 93% 60%), hsl(45 93% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(222 14% 5%) 0%, hsl(222 14% 8%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(222 14% 7%) 0%, hsl(222 14% 9%) 100%);
+    
+    --shadow-mineral: 0 10px 30px -5px hsl(158 75% 45% / 0.2);
+    --shadow-card: 0 10px 25px -5px hsl(222 14% 5% / 0.5);
+    --shadow-glow: 0 0 40px hsl(158 75% 45% / 0.3);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +114,29 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+}
+
+/* Custom Component Styles */
+@layer components {
+  .btn-mineral {
+    @apply bg-gradient-to-r from-primary to-primary/90 text-primary-foreground px-6 py-3 rounded-xl font-semibold;
+    @apply hover:shadow-mineral transition-[var(--transition-smooth)];
+    @apply border border-primary/20 backdrop-blur-sm;
+  }
+  
+  .btn-accent {
+    @apply bg-gradient-to-r from-accent to-accent/90 text-accent-foreground px-6 py-3 rounded-xl font-semibold;
+    @apply hover:shadow-glow transition-[var(--transition-smooth)];
+  }
+  
+  .card-mineral {
+    @apply bg-gradient-to-br from-card to-card/95 border border-border/50 rounded-2xl p-6;
+    @apply backdrop-blur-sm shadow-card;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
 }

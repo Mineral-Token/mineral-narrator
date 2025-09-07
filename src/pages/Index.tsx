@@ -1,12 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import HeroSection from "@/components/HeroSection";
+import ChatInterface from "@/components/ChatInterface";
 
 const Index = () => {
+  const [showChat, setShowChat] = useState(false);
+
+  const handleStartChat = () => {
+    setShowChat(true);
+    // Smooth scroll to chat section
+    setTimeout(() => {
+      document.getElementById('chat-section')?.scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+    }, 100);
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <HeroSection onStartChat={handleStartChat} />
+      
+      {/* Chat Section */}
+      {showChat && (
+        <section id="chat-section" className="min-h-screen bg-gradient-hero flex items-center justify-center p-6">
+          <div className="w-full flex justify-center">
+            <ChatInterface />
+          </div>
+        </section>
+      )}
     </div>
   );
 };
