@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { ArrowUpIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { askAI } from "@/lib/openrouter";
+import ApiKeyInput from "./ApiKeyInput";
 
 interface Message {
   role: 'user' | 'assistant';
@@ -19,9 +20,22 @@ const ChatInterface = () => {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [apiKey, setApiKey] = useState<string>("");
+
+  useEffect(() => {
+    // Check for stored API key on component mount
+    const storedKey = localStorage.getItem('openrouter_api_key');
+    if (storedKey) {
+      setApiKey(storedKey);
+    }
+  }, []);
+
+  const handleApiKeySet = (newApiKey: string) => {
+    setApiKey(newApiKey);
+  };
 
   const handleSend = async () => {
-    if (!input.trim() || isLoading) return;
+    if (!input.trim() || isLoading || !apiKey) return;
 
     const userMessage: Message = { role: 'user', content: input };
     setMessages(prev => [...prev, userMessage]);
@@ -29,7 +43,7 @@ const ChatInterface = () => {
     setIsLoading(true);
 
     try {
-      const response = await askAI([...messages, userMessage]);
+      const response = await askAI([...messages, userMessage], apiKey);
       setMessages(prev => [...prev, { role: 'assistant', content: response }]);
     } catch (error) {
       console.error('Chat error:', error);
@@ -50,7 +64,10 @@ const ChatInterface = () => {
   };
 
   return (
-    <Card className="card-mineral w-full max-w-4xl h-[600px] flex flex-col">
+    <div className="w-full max-w-4xl">
+      <ApiKeyInput onApiKeySet={handleApiKeySet} hasApiKey={!!apiKey} />
+      
+      <Card className="card-mineral h-[600px] flex flex-col">
       <div className="flex items-center gap-3 pb-4 border-b border-border/50">
         <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center">
           <SparklesIcon className="w-5 h-5 text-primary-foreground" />
@@ -100,19 +117,20 @@ const ChatInterface = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={handleKeyPress}
-          placeholder="Ask about MXTK's story, how it works, or investment opportunities..."
+          placeholder={apiKey ? "Ask about MXTK's story, how it works, or investment opportunities..." : "Please configure your API key above to start chatting"}
           className="flex-1 bg-muted/30 border-border/50 focus:border-primary/50"
-          disabled={isLoading}
+          disabled={isLoading || !apiKey}
         />
         <Button
           onClick={handleSend}
-          disabled={!input.trim() || isLoading}
+          disabled={!input.trim() || isLoading || !apiKey}
           className="btn-mineral px-4"
         >
           <ArrowUpIcon className="w-4 h-4" />
         </Button>
       </div>
     </Card>
+    </div>
   );
 };
 
