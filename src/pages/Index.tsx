@@ -1,6 +1,7 @@
 import { useState } from "react";
 import HeroSection from "@/components/HeroSection";
 import ChatInterface from "@/components/ChatInterface";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   const [showChat, setShowChat] = useState(false);
@@ -28,6 +29,9 @@ const Index = () => {
           </div>
         </section>
       )}
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

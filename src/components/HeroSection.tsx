@@ -81,6 +81,15 @@ const HeroSection = ({ onStartChat }: { onStartChat: () => void }) => {
           <Button 
             variant="outline" 
             className="bg-secondary/20 border-primary/30 text-foreground hover:bg-primary/10 text-lg px-8 py-4"
+            onClick={() => {
+              const tokenizationSection = document.getElementById('tokenization-info');
+              if (tokenizationSection) {
+                tokenizationSection.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                // If section doesn't exist, scroll to footer for now
+                document.querySelector('footer')?.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
             Learn About Tokenization
           </Button>
@@ -89,7 +98,7 @@ const HeroSection = ({ onStartChat }: { onStartChat: () => void }) => {
         {/* Stats */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
           <div className="text-center">
-            <div className="text-3xl font-bold text-gradient mb-2">$19B+</div>
+            <div className="text-3xl font-bold text-gradient mb-2">$33B+</div>
             <div className="text-muted-foreground">Mineral Assets Committed</div>
           </div>
           <div className="text-center">
