@@ -56,7 +56,7 @@ const ApiKeyInput = ({ onApiKeySet, hasApiKey }: ApiKeyInputProps) => {
         <KeyIcon className="w-8 h-8 text-primary mx-auto mb-2" />
         <h3 className="text-lg font-semibold mb-2">Connect Your OpenRouter API Key</h3>
         <p className="text-sm text-muted-foreground mb-4">
-          To enable AI chat, you'll need an OpenRouter API key. Get one free at{" "}
+          The AI chat is ready to use with a test key! You can also input your own OpenRouter API key for extended usage. Get one free at{" "}
           <a 
             href="https://openrouter.ai/keys" 
             target="_blank" 

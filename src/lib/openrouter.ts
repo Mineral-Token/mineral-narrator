@@ -21,7 +21,7 @@ const mineralTokenKnowledgeBase = {
   }
 };
 
-const OPENROUTER_API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY || '';
+const OPENROUTER_API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY || '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';
 
 const SYSTEM_PROMPT = `You are a storytelling guide for Mineral Token (MXTK). Your role is to explain MXTK concepts through immersive narrative experiences while grounding all facts in the knowledge base provided.
 
@@ -46,7 +46,7 @@ TONE & STYLE:
 - Trustworthy and transparent`;
 
 export async function askAI(messages: ChatMessage[], apiKey?: string): Promise<string> {
-  const effectiveApiKey = apiKey || localStorage.getItem('openrouter_api_key') || '';
+  const effectiveApiKey = apiKey || localStorage.getItem('openrouter_api_key') || OPENROUTER_API_KEY;
   
   if (!effectiveApiKey) {
     return "I'm currently experiencing technical difficulties connecting to the AI service. Please ensure the OpenRouter API key is properly configured.";

@@ -23,10 +23,13 @@ const ChatInterface = () => {
   const [apiKey, setApiKey] = useState<string>("");
 
   useEffect(() => {
-    // Check for stored API key on component mount
+    // Check for stored API key on component mount, or use test key as fallback
     const storedKey = localStorage.getItem('openrouter_api_key');
     if (storedKey) {
       setApiKey(storedKey);
+    } else {
+      // Set test key as fallback so users can immediately try the chat
+      setApiKey('test-key-available');
     }
   }, []);
 
