@@ -1,3 +1,5 @@
+import { logger } from './logger';
+
 interface ChatMessage {
   role: 'user' | 'assistant' | 'system';
   content: string;
@@ -45,11 +47,15 @@ TONE & STYLE:
 - Enthusiastic about the potential of MXTK
 - Trustworthy and transparent`;
 
-export async function askAI(messages: ChatMessage[], apiKey?: string): Promise<string> {
-  const effectiveApiKey = apiKey || localStorage.getItem('openrouter_api_key') || OPENROUTER_API_KEY;
+export async function askAI(messages: ChatMessage[]): Promise<string> {
+  const effectiveApiKey = OPENROUTER_API_KEY;
+  const userMessage = messages[messages.length - 1]?.content || '';
+  const modelName = 'mistralai/mistral-7b-instruct';
   
   if (!effectiveApiKey) {
-    return "I'm currently experiencing technical difficulties connecting to the AI service. Please ensure the OpenRouter API key is properly configured.";
+    const fallbackResponse = "I'm currently experiencing technical difficulties connecting to my AI service. Please try again in a moment, or contact support if the issue persists.";
+    await logger.logConversation(userMessage, fallbackResponse, 'fallback');
+    return fallbackResponse;
   }
 
   try {
@@ -62,7 +68,7 @@ export async function askAI(messages: ChatMessage[], apiKey?: string): Promise<s
         'X-Title': 'Mineral Token AI Guide'
       },
       body: JSON.stringify({
-        model: 'mistralai/mistral-7b-instruct',
+        model: modelName,
         messages: [
           {
             role: 'system',
@@ -85,24 +91,28 @@ export async function askAI(messages: ChatMessage[], apiKey?: string): Promise<s
     const data = await response.json();
     
     if (data.choices && data.choices[0] && data.choices[0].message) {
-      return data.choices[0].message.content;
+      const aiResponse = data.choices[0].message.content;
+      await logger.logConversation(userMessage, aiResponse, modelName);
+      return aiResponse;
     } else {
       throw new Error('Unexpected API response format');
     }
   } catch (error) {
-    console.error('OpenRouter API error:', error);
+    console.error('AI API error:', error);
     
     // Fallback responses based on common topics
-    const userMessage = messages[messages.length - 1]?.content.toLowerCase() || '';
+    const userMessageLower = userMessage.toLowerCase();
+    let fallbackResponse: string;
     
-    if (userMessage.includes('how') && userMessage.includes('work')) {
-      return "Let me tell you the story of how MXTK works... Imagine you're a mine owner in Australia with significant gold deposits. Traditionally, you'd need to extract and sell the gold to access its value. But with MXTK, we create a bridge between your physical assets and the digital economy. Our expert appraisers validate your mineral assets using industry standards like 43-101 reports, then we mint tokens on a 1:1 basis with your verified assets. These tokens can then be traded on crypto exchanges worldwide, giving you instant liquidity while you retain ownership of your mineral wealth.";
+    if (userMessageLower.includes('how') && userMessageLower.includes('work')) {
+      fallbackResponse = "Let me tell you the story of how MXTK works... Imagine you're a mine owner in Australia with significant gold deposits. Traditionally, you'd need to extract and sell the gold to access its value. But with MXTK, we create a bridge between your physical assets and the digital economy. Our expert appraisers validate your mineral assets using industry standards like 43-101 reports, then we mint tokens on a 1:1 basis with your verified assets. These tokens can then be traded on crypto exchanges worldwide, giving you instant liquidity while you retain ownership of your mineral wealth.";
+    } else if (userMessageLower.includes('invest') || userMessageLower.includes('buy')) {
+      fallbackResponse = "Picture the global mineral market - it's valued at over $19 billion and growing exponentially as demand for rare earth elements, precious metals, and battery minerals soars with the green energy transition. When you invest in MXTK, you're not just buying a token - you're gaining exposure to a diversified portfolio of verified mineral assets worldwide. Each token represents real, tangible wealth stored in the earth, from lithium deposits powering electric vehicles to rare earth elements essential for renewable energy infrastructure.";
+    } else {
+      fallbackResponse = "I apologize, but I'm having trouble connecting to provide you with the most up-to-date information right now. However, I can share that MXTK represents a revolutionary approach to mineral asset tokenization, backed by over $19 billion in committed mineral assets. Would you like to know more about how our 1:1 asset-backed tokenization works, or are you curious about investment opportunities?";
     }
     
-    if (userMessage.includes('invest') || userMessage.includes('buy')) {
-      return "Picture the global mineral market - it's valued at over $19 billion and growing exponentially as demand for rare earth elements, precious metals, and battery minerals soars with the green energy transition. When you invest in MXTK, you're not just buying a token - you're gaining exposure to a diversified portfolio of verified mineral assets worldwide. Each token represents real, tangible wealth stored in the earth, from lithium deposits powering electric vehicles to rare earth elements essential for renewable energy infrastructure.";
-    }
-    
-    return "I apologize, but I'm having trouble connecting to provide you with the most up-to-date information right now. However, I can share that MXTK represents a revolutionary approach to mineral asset tokenization, backed by over $19 billion in committed mineral assets. Would you like to know more about how our 1:1 asset-backed tokenization works, or are you curious about investment opportunities?";
+    await logger.logConversation(userMessage, fallbackResponse, 'fallback');
+    return fallbackResponse;
   }
 }

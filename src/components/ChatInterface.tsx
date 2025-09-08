@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { ArrowUpIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { askAI } from "@/lib/openrouter";
-import ApiKeyInput from "./ApiKeyInput";
 
 interface Message {
   role: 'user' | 'assistant';
@@ -20,18 +19,8 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [apiKey, setApiKey] = useState<string>("");
 
   useEffect(() => {
-    // Check for stored API key on component mount, or use test key as fallback
-    const storedKey = localStorage.getItem('openrouter_api_key');
-    if (storedKey) {
-      setApiKey(storedKey);
-    } else {
-      // Set test key as fallback so users can immediately try the chat
-      setApiKey('test-key-available');
-    }
-
     // If there's an initial message, send it automatically
     if (initialMessage && typeof initialMessage === 'string' && initialMessage.trim()) {
       setInput(initialMessage);
@@ -40,15 +29,12 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
         handleSendMessage(initialMessage);
       }, 500);
     }
-  }, [initialMessage]);
+  }, [initialMessage, handleSendMessage]);
 
-  const handleApiKeySet = (newApiKey: string) => {
-    setApiKey(newApiKey);
-  };
 
-  const handleSendMessage = async (messageToSend?: string) => {
+  const handleSendMessage = useCallback(async (messageToSend?: string) => {
     const message = messageToSend || input;
-    if (!message.trim() || isLoading || !apiKey) return;
+    if (!message.trim() || isLoading) return;
 
     const userMessage: Message = { role: 'user', content: message };
     setMessages(prev => [...prev, userMessage]);
@@ -56,7 +42,8 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
     setIsLoading(true);
 
     try {
-      const response = await askAI([...messages, userMessage], apiKey);
+      const currentMessages = messages.length > 0 ? [...messages, userMessage] : [userMessage];
+      const response = await askAI(currentMessages);
       setMessages(prev => [...prev, { role: 'assistant', content: response }]);
     } catch (error) {
       console.error('Chat error:', error);
@@ -67,7 +54,7 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [input, isLoading, messages]);
 
   const handleSend = () => handleSendMessage();
 
@@ -81,7 +68,7 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
   return (
     <div className="w-full max-w-4xl">
       
-      <Card className="card-mineral h-[600px] flex flex-col">
+      <Card className="card-mineral min-h-[400px] max-h-[600px] flex flex-col">
       <div className="flex items-center gap-3 pb-4 border-b border-border/50">
         <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center">
           <SparklesIcon className="w-5 h-5 text-primary-foreground" />
@@ -131,13 +118,13 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={handleKeyPress}
-          placeholder={apiKey ? "Ask about MXTK's story, how it works, or investment opportunities..." : "Please configure your API key above to start chatting"}
+          placeholder="Ask about MXTK's story, how it works, or investment opportunities..."
           className="flex-1 bg-muted/30 border-border/50 focus:border-primary/50"
-          disabled={isLoading || !apiKey}
+          disabled={isLoading}
         />
         <Button
           onClick={handleSend}
-          disabled={!input.trim() || isLoading || !apiKey}
+          disabled={!input.trim() || isLoading}
           className="btn-mineral px-4"
         >
           <ArrowUpIcon className="w-4 h-4" />

@@ -2,15 +2,14 @@ import { Button } from "@/components/ui/button";
 import { SparklesIcon, CubeIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
 import heroImage from "@/assets/mineral-hero-bg.jpg";
 
-const HeroSection = ({ onStartChat }: { onStartChat: () => void }) => {
+const HeroSection = ({ onStartChat }: { onStartChat: (message?: string) => void }) => {
   return (
     <div 
-      className="relative min-h-screen bg-gradient-hero flex items-center justify-center overflow-hidden"
+      className="relative py-20 bg-gradient-hero flex items-center justify-center overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(135deg, rgba(34, 40, 49, 0.95) 0%, rgba(34, 40, 49, 0.85) 100%), url(${heroImage})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundPosition: 'center'
       }}
     >
       {/* Background decorative elements */}
@@ -25,8 +24,6 @@ const HeroSection = ({ onStartChat }: { onStartChat: () => void }) => {
         <div className="mb-8">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="text-gradient">Mineral Token</span>
-            <br />
-            <span className="text-foreground">Storytelling AI</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">

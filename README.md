@@ -1,73 +1,203 @@
-# Welcome to your Lovable project
+# Mineral Narrator
 
-## Project info
+An AI-powered storytelling guide for Mineral Token (MXTK) that provides conversational assistance about mineral asset tokenization through immersive narrative experiences.
 
-**URL**: https://lovable.dev/projects/9d3efbb5-0c6a-4ba4-942e-b14b1b682fb3
+## Overview
 
-## How can I edit this code?
+Mineral Narrator is a React-based web application that serves as an intelligent guide for understanding MXTK (Mineral Token) - a pioneering asset-backed cryptocurrency that unlocks liquidity for mineral asset owners worldwide through 1:1 tokenization of verified mineral assets.
 
-There are several ways of editing your application.
+### Key Features
 
-**Use Lovable**
+- **Interactive AI Chat Interface** - Conversational AI that explains MXTK concepts through engaging stories
+- **MXTK Knowledge Base** - Comprehensive information about mineral tokenization, processes, and market data
+- **Conversation Logging** - Tracks user interactions for analytics and improvements
+- **Responsive Design** - Works seamlessly across desktop and mobile devices
+- **Fallback System** - Provides responses even when AI service is unavailable
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9d3efbb5-0c6a-4ba4-942e-b14b1b682fb3) and start prompting.
+## Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React 18** with TypeScript for type-safe development
+- **Vite** for fast build system and hot module replacement
+- **Tailwind CSS** + **shadcn/ui** for modern, accessible UI components
+- **AI Integration** for conversational interface and storytelling
+- **React Router** for client-side routing
+- **TanStack Query** for server state management
 
-**Use your preferred IDE**
+## Quick Start
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js 18+ and npm
+- Git
 
-Follow these steps:
+### Local Development Setup
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/mineral-narrator.git
+cd mineral-narrator
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# 2. Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 3. Configure environment variables
+cp .env.example .env
+# Edit .env and add your API keys (see Environment Configuration below)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 4. Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server with hot reload |
+| `npm run build` | Create production build |
+| `npm run build:dev` | Create development build with source maps |
+| `npm run lint` | Run ESLint for code quality checks |
+| `npm run preview` | Preview production build locally |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Environment Configuration
 
-## What technologies are used for this project?
+### Required Environment Variables
 
-This project is built with:
+Create a `.env` file in the root directory:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+# AI API Configuration
+VITE_OPENROUTER_API_KEY=your_api_key_here
 
-## How can I deploy this project?
+# Logging Configuration (optional)
+VITE_LOGGING_ENDPOINT=https://your-logging-endpoint.com/log
 
-Simply open [Lovable](https://lovable.dev/projects/9d3efbb5-0c6a-4ba4-942e-b14b1b682fb3) and click on Share -> Publish.
+# Environment
+NODE_ENV=development
+```
 
-## Can I connect a custom domain to my Lovable project?
+### API Key Setup
 
-Yes, you can!
+1. Get an API key from your AI service provider
+2. Add it to your `.env` file as `VITE_OPENROUTER_API_KEY`
+3. For production, configure this as a GitHub repository secret
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### GitHub Pages (Automatic)
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+#### Setup Instructions:
+
+1. **Enable GitHub Pages**
+   - Go to your repository → Settings → Pages
+   - Source: Deploy from a branch
+   - Branch: `gh-pages` (created automatically by GitHub Actions)
+
+2. **Configure GitHub Secrets**
+   - Go to repository → Settings → Secrets and variables → Actions
+   - Add these repository secrets:
+     - `VITE_OPENROUTER_API_KEY`: Your production AI API key
+     - `VITE_LOGGING_ENDPOINT`: Your logging endpoint (optional)
+
+3. **Deploy**
+   - Push to the `main` branch
+   - GitHub Actions will automatically build and deploy
+   - Site will be available at: `https://yourusername.github.io/mineral-narrator/`
+
+#### Deployment Configuration
+
+- **Trigger**: Push to main branch
+- **Build**: `npm run build` with environment variables from GitHub secrets  
+- **Deploy**: Automated via GitHub Actions workflow (`.github/workflows/deploy.yml`)
+- **Base URL**: `/mineral-narrator/` (configured in `vite.config.ts`)
+
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── ui/             # shadcn/ui components
+│   ├── ChatInterface.tsx
+│   ├── HeroSection.tsx
+│   └── Footer.tsx
+├── lib/                # Utility libraries
+│   ├── openrouter.ts   # AI integration
+│   ├── logger.ts       # Conversation logging
+│   └── utils.ts        # General utilities
+├── pages/              # Route pages
+├── hooks/              # Custom React hooks
+└── assets/             # Static assets
+```
+
+## Development
+
+### VS Code Configuration
+
+The project includes a `remapping.txt` file for TypeScript path mapping:
+- `@/*` maps to `./src/*`
+- Enables clean imports like `@/components/Button`
+
+### Code Style
+
+- TypeScript for type safety
+- ESLint for code quality
+- Tailwind CSS for styling
+- Component-based architecture with shadcn/ui patterns
+
+### Building
+
+```bash
+# Development build (with source maps)
+npm run build:dev
+
+# Production build (optimized)
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Features
+
+### AI Conversation System
+
+- **Storytelling Approach**: Explains technical concepts through engaging narratives
+- **Knowledge Base**: Contains comprehensive MXTK information ($19+ billion in committed assets)
+- **Fallback Responses**: Provides helpful responses when AI service is unavailable
+- **Session Management**: Tracks conversations with unique session IDs
+
+### Logging & Analytics
+
+- **Console Logging**: All conversations logged to browser console
+- **Local Storage**: Last 100 conversations stored locally with auto-cleanup
+- **External Logging**: Optional webhook integration for production analytics
+- **Comprehensive Data**: Captures user messages, AI responses, timestamps, and session info
+
+### User Experience
+
+- **Immediate Availability**: Chat works instantly without configuration
+- **Mobile Responsive**: Optimized for all device sizes  
+- **Smooth Interactions**: Loading states and error handling
+- **Clean Interface**: Focus on conversation without technical complexity
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Run linting (`npm run lint`)
+5. Test the build (`npm run build`)
+6. Commit your changes (`git commit -m 'Add amazing feature'`)
+7. Push to the branch (`git push origin feature/amazing-feature`)
+8. Open a Pull Request
+
+## License
+
+This project is private and proprietary. All rights reserved.
+
+## Support
+
+For questions or support, please contact the development team or create an issue in the repository.

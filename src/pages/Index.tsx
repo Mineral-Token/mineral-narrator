@@ -12,12 +12,6 @@ const Index = () => {
       setInitialMessage(message);
     }
     setShowChat(true);
-    // Smooth scroll to chat section
-    setTimeout(() => {
-      document.getElementById('chat-section')?.scrollIntoView({ 
-        behavior: 'smooth' 
-      });
-    }, 100);
   };
 
   return (
@@ -25,13 +19,24 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection onStartChat={handleStartChat} />
       
-      {/* Chat Section */}
+      {/* Chat Section - Inline */}
       {showChat && (
-        <section id="chat-section" className="min-h-screen bg-gradient-hero flex items-center justify-center p-6">
-          <div className="w-full flex justify-center">
+        <section className="py-8 px-6 bg-slate-50 border-t">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl font-bold mb-2">Chat with MXTK Guide</h2>
+              <p className="text-gray-600">Ask me anything about Mineral Token</p>
+            </div>
             <ChatInterface initialMessage={initialMessage} />
           </div>
         </section>
+      )}
+      
+      {/* Debug - Show when chat should be visible */}
+      {process.env.NODE_ENV === 'development' && showChat && (
+        <div style={{padding: '10px', background: 'green', color: 'white', textAlign: 'center'}}>
+          ✅ Chat section is active (showChat = {showChat.toString()})
+        </div>
       )}
       
       {/* Footer */}
