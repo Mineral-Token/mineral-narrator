@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { ShieldCheckIcon } from "@heroicons/react/24/outline";
 import mxtkLogo from "@/assets/mxtk-logo.png";
 
@@ -80,8 +81,8 @@ const Footer = ({ onStartChat }: { onStartChat: (initialMessage?: string) => voi
             © 2024 Mineral Token. All rights reserved.
           </div>
           <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#terms" className="hover:text-foreground transition-colors">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

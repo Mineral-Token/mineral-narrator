@@ -80,7 +80,6 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
 
   return (
     <div className="w-full max-w-4xl">
-      <ApiKeyInput onApiKeySet={handleApiKeySet} hasApiKey={!!apiKey} />
       
       <Card className="card-mineral h-[600px] flex flex-col">
       <div className="flex items-center gap-3 pb-4 border-b border-border/50">
@@ -89,7 +88,7 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
         </div>
         <div>
           <h3 className="text-lg font-semibold">MXTK AI Guide</h3>
-          <p className="text-sm text-muted-foreground">Ask me anything about Mineral Token</p>
+          <p className="text-sm text-muted-foreground">Ask me anything about Mineral Token (MXTK)</p>
         </div>
       </div>
 
@@ -145,6 +144,13 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
         </Button>
       </div>
     </Card>
+    
+    {/* AI Disclaimer */}
+    <div className="mt-3 text-center">
+      <p className="text-xs text-muted-foreground">
+        AI responses may contain inaccuracies. Please verify important information independently.
+      </p>
+    </div>
     </div>
   );
 };
