@@ -53,7 +53,7 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
         handleSendMessage(initialMessage);
       }, 500);
     }
-  }, [initialMessage, handleSendMessage]);
+  }, [initialMessage]); // Removed handleSendMessage from dependencies to prevent loop
 
   const handleSend = () => handleSendMessage();
 
