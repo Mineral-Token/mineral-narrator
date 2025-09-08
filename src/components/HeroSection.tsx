@@ -68,7 +68,7 @@ const HeroSection = ({ onStartChat }: { onStartChat: (message?: string) => void 
         {/* CTA buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
-            onClick={onStartChat}
+            onClick={() => onStartChat()}
             className="btn-mineral text-lg px-8 py-4 hover:scale-105 transition-transform"
           >
             <SparklesIcon className="w-5 h-5 mr-2" />

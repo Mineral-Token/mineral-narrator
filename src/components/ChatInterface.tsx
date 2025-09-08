@@ -20,18 +20,6 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    // If there's an initial message, send it automatically
-    if (initialMessage && typeof initialMessage === 'string' && initialMessage.trim()) {
-      setInput(initialMessage);
-      // Auto-send the message after a brief delay
-      setTimeout(() => {
-        handleSendMessage(initialMessage);
-      }, 500);
-    }
-  }, [initialMessage, handleSendMessage]);
-
-
   const handleSendMessage = useCallback(async (messageToSend?: string) => {
     const message = messageToSend || input;
     if (!message.trim() || isLoading) return;
@@ -55,6 +43,17 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
       setIsLoading(false);
     }
   }, [input, isLoading, messages]);
+
+  useEffect(() => {
+    // If there's an initial message, send it automatically
+    if (initialMessage && typeof initialMessage === 'string' && initialMessage.trim()) {
+      setInput(initialMessage);
+      // Auto-send the message after a brief delay
+      setTimeout(() => {
+        handleSendMessage(initialMessage);
+      }, 500);
+    }
+  }, [initialMessage, handleSendMessage]);
 
   const handleSend = () => handleSendMessage();
 
