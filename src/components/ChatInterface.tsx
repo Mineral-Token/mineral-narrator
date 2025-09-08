@@ -33,7 +33,7 @@ const ChatInterface = ({ initialMessage }: { initialMessage?: string }) => {
     }
 
     // If there's an initial message, send it automatically
-    if (initialMessage && initialMessage.trim()) {
+    if (initialMessage && typeof initialMessage === 'string' && initialMessage.trim()) {
       setInput(initialMessage);
       // Auto-send the message after a brief delay
       setTimeout(() => {
