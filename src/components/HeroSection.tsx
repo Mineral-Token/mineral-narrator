@@ -58,9 +58,9 @@ const HeroSection = ({ onStartChat }: { onStartChat: (message?: string) => void 
             <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
               <SparklesIcon className="w-6 h-6 text-primary-foreground" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">AI Storytelling</h3>
+            <h3 className="text-lg font-semibold mb-2">Pre-Extraction Value</h3>
             <p className="text-muted-foreground text-sm">
-              Interactive narrative experiences that explain MXTK concepts
+              Unlock mineral wealth before extraction - revolutionary market approach
             </p>
           </div>
         </div>
