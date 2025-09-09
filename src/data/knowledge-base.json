@@ -294,5 +294,209 @@
       "Legal frameworks and UNCITRAL arbitration",
       "DeFi integration and collateralization strategies"
     ]
+  },
+  "supported_minerals": {
+    "heading": "Supported Minerals and Elements",
+    "description": "MXTK supports tokenization of a comprehensive range of minerals, elements, and commodities across the entire periodic table and commercial mining spectrum.",
+    "total_count": 174,
+    "categories": {
+      "periodic_elements": {
+        "description": "All periodic table elements from Hydrogen to Oganesson",
+        "count": 118,
+        "elements": ["H", "HE", "LI", "BE", "B", "C", "N", "O", "F", "NE", "NA", "MG", "AL", "SI", "P", "S", "CL", "AR", "K", "CA", "SC", "TI", "V", "CR", "MN", "FE", "CO", "NI", "CU", "ZN", "GA", "GE", "AS", "SE", "BR", "KR", "RB", "SR", "Y", "ZR", "NB", "MO", "TC", "RU", "RH", "PD", "AG", "CD", "IN", "SN", "SB", "TE", "I", "XE", "CS", "BA", "LA", "CE", "PR", "ND", "PM", "SM", "EU", "GD", "TB", "DY", "HO", "ER", "TM", "YB", "LU", "HF", "TA", "W", "RE", "OS", "IR", "PT", "AU", "HG", "TL", "PB", "BI", "PO", "AT", "RN", "FR", "RA", "AC", "TH", "PA", "U", "NP", "PU", "AM", "CM", "BK", "CF", "ES", "FM", "MD", "NO", "LR", "RF", "DB", "SG", "BH", "HS", "MT", "DS", "RG", "CN", "NH", "FL", "MC", "LV", "TS", "OG"]
+      },
+      "hydrocarbons_energy": {
+        "description": "Crude oil byproducts and energy-related commodities",
+        "count": 23,
+        "commodities": ["CRUD", "NGAS", "PROP", "BUTA", "PENT", "HEXA", "HEPT", "OCTA", "NONA", "DECA", "BENZ", "TOLU", "XYLN", "ETHL", "METH", "ACET", "FORM", "COAL", "PEAT", "WOOD", "BIOM", "ETHG", "MTHG"]
+      },
+      "rare_earth_special": {
+        "description": "Rare earth elements and special material categories",
+        "count": 8,
+        "categories": ["REE", "LANT", "ACTI", "TRAN", "META", "SEMI", "NOBL", "HALO"]
+      },
+      "commercial_minerals": {
+        "description": "Commercially mined minerals and gemstones",
+        "count": 25,
+        "minerals": ["DMND", "RUBY", "SAPH", "EMER", "TOPL", "GART", "AMTH", "QRTZ", "FELD", "MICA", "TALC", "GYPS", "CALC", "DOLO", "BARI", "FLUO", "APTI", "ZIRC", "RUTL", "ILMN", "CHRO", "MAGN", "PYRI", "GALN", "SPHA"]
+      }
+    },
+    "note": "This comprehensive coverage ensures MXTK can tokenize virtually any mineral asset worldwide, from basic elements to complex commercial commodities, supporting global mineral asset owners across all sectors of the mining and extraction industries."
+  },
+  "institutional_finance": {
+    "title": "MXTK in Institutional Finance: 20 Applications Driving the On-Chain Economy in 2025",
+    "executive_summary": "As of August 25, 2025, the financial landscape has undergone a significant structural evolution, driven by the maturation of distributed ledger technology (DLT) and the institutional adoption of tokenized real-world assets (RWAs). At the epicenter of this transformation is the MXTK token, which has established itself as a pivotal infrastructure asset within the on-chain capital markets. With a market capitalization of $37 billion, supported by $500 million in public liquidity on decentralized exchanges like Uniswap and a consistent $5 million in daily trading volume, MXTK functions as the native utility, governance, and settlement asset for a dominant, multi-chain protocol designed for regulated financial instruments.",
+    "market_data": {
+      "market_cap": "$37 billion",
+      "public_liquidity": "$500 million on Uniswap",
+      "daily_volume": "$5 million",
+      "ecosystem_role": "Native utility, governance, and settlement asset"
+    },
+    "categories": {
+      "capital_liquidity_optimization": "Use cases that allow institutions to manage their balance sheets more efficiently, unlock trapped capital, and reduce systemic risk through instantaneous settlement and enhanced collateral mobility.",
+      "new_product_market_creation": "Applications that leverage tokenization to create novel financial instruments, open previously inaccessible markets to a wider range of investors, and generate new sources of alpha and yield.",
+      "operational_process_automation": "Implementations that use smart contracts and DLT to automate complex, manual workflows, thereby reducing costs, minimizing errors, and increasing transactional speed and transparency.",
+      "democratized_access_distribution": "Strategies that fractionalize ownership of high-value, illiquid assets, lowering barriers to entry and enabling broader distribution to new investor segments, such as high-net-worth individuals (HNWIs)."
+    },
+    "use_cases": [
+      {
+        "id": 1,
+        "vertical": "Banking",
+        "application": "Intraday Repo & Liquidity Management",
+        "benefit": "Capital Efficiency, Reduced Settlement Risk",
+        "description": "Banks tokenize money market fund holdings for instantaneous repo transactions with atomic settlement, replacing slow traditional processes with real-time liquidity management."
+      },
+      {
+        "id": 2,
+        "vertical": "Banking",
+        "application": "Basel III Compliant Collateral Mobility",
+        "benefit": "Regulatory Compliance, Capital Optimization",
+        "description": "European banks transfer tokenized government bonds as collateral to US counterparties in minutes, 24/7, qualifying as Group 1a assets with same risk weighting as underlying bonds."
+      },
+      {
+        "id": 3,
+        "vertical": "Fixed Income Desks",
+        "application": "Automated Servicing for Digital Bonds",
+        "benefit": "Operational Efficiency, Cost Reduction",
+        "description": "Corporate bonds issued on MXTK platform with smart contracts automating coupon payments, eliminating paying agents and providing real-time ownership registry."
+      },
+      {
+        "id": 4,
+        "vertical": "Trade Finance",
+        "application": "Tokenized Invoice Factoring",
+        "benefit": "SME Financing, Narrowing Trade Finance Gap",
+        "description": "SME invoices tokenized and sold into institutional liquidity pools, connecting global capital with SME financing needs through transparent, verified receivables."
+      },
+      {
+        "id": 5,
+        "vertical": "Trading Firms",
+        "application": "Cross-Venue RWA Arbitrage",
+        "benefit": "Market Efficiency, Alpha Generation",
+        "description": "Proprietary trading firms exploit price dislocations between tokenized and traditional asset markets, particularly during off-hours trading when traditional markets are closed."
+      },
+      {
+        "id": 6,
+        "vertical": "Hedge Funds",
+        "application": "Yield Generation via RWA Liquidity Pools",
+        "benefit": "New Revenue Streams, Market Making",
+        "description": "Hedge funds provide liquidity to institutional RWA trading pools, earning fee-based income tied to real-world asset trading volume, uncorrelated to crypto markets."
+      },
+      {
+        "id": 7,
+        "vertical": "Hedge Funds",
+        "application": "Delta-Neutral Basis Trading",
+        "benefit": "Sophisticated Hedging, Low-Risk Yield",
+        "description": "Quantitative funds exploit yield differentials between tokenized and traditional instruments while hedging interest rate risk through delta-neutral strategies."
+      },
+      {
+        "id": 8,
+        "vertical": "Hedge Funds",
+        "application": "Governance-Driven Strategic Investment",
+        "benefit": "Information Advantage, Market Influence",
+        "description": "Funds accumulate MXTK tokens for governance rights, taking early positions in underlying assets before tokenization proposals pass, capturing liquidity premiums."
+      },
+      {
+        "id": 9,
+        "vertical": "Private Equity",
+        "application": "Tokenized Feeder Funds for HNWIs",
+        "benefit": "Democratized Access, Expanded Investor Base",
+        "description": "PE firms launch tokenized feeder funds with automated capital calls and distributions, lowering minimums from $5M to $100K and servicing thousands of smaller investors."
+      },
+      {
+        "id": 10,
+        "vertical": "Private Equity",
+        "application": "Secondary Trading of LP Interests",
+        "benefit": "Enhanced Liquidity for Illiquid Assets",
+        "description": "LP stakes tokenized for trading on regulated secondary marketplaces, providing transparent price discovery and instant settlement for previously illiquid interests."
+      },
+      {
+        "id": 11,
+        "vertical": "Corporate Finance",
+        "application": "Tokenized Debt for M&A/LBOs",
+        "benefit": "Efficient Capital Formation, Global Reach",
+        "description": "PE firms issue subordinated debt as security tokens for LBOs, accessing global investor networks and streamlining syndication with digital processes."
+      },
+      {
+        "id": 12,
+        "vertical": "Corporate Finance",
+        "application": "Smart Contract-Vesting ESOPs",
+        "benefit": "Employee Liquidity, Administrative Automation",
+        "description": "Pre-IPO companies issue employee stock options as tokens with automated vesting schedules and secondary market access for early liquidity."
+      },
+      {
+        "id": 13,
+        "vertical": "Commodities",
+        "application": "24/7 Gold-Backed Collateral",
+        "benefit": "Collateral Mobility, Counterparty Risk Reduction",
+        "description": "Trading houses use tokenized gold as instant, 24/7 collateral for margin calls, optimizing capital usage and reducing counterparty risk across weekends and holidays."
+      },
+      {
+        "id": 14,
+        "vertical": "Supply Chain Finance",
+        "application": "Provenance-Verified Asset Financing",
+        "benefit": "Fraud Reduction, De-risked Lending",
+        "description": "Luxury goods tokenized with immutable provenance records, enabling lenders to verify authenticity and chain of custody for secure asset-backed financing."
+      },
+      {
+        "id": 15,
+        "vertical": "Commodities",
+        "application": "Global Carbon Credit Trading",
+        "benefit": "Transparency, Market Accessibility",
+        "description": "Carbon credits tokenized with verified project metadata, creating transparent global marketplace with instant settlement and immutable compliance records."
+      },
+      {
+        "id": 16,
+        "vertical": "Supply Chain Finance",
+        "application": "Dynamic Inventory Financing",
+        "benefit": "Working Capital Optimization, Real-Time LTV",
+        "description": "Retailers tokenize inventory connected to real-time warehouse data, enabling dynamic credit facilities that adjust automatically based on stock levels."
+      },
+      {
+        "id": 17,
+        "vertical": "Wealth Management",
+        "application": "Hyper-Customized RWA Portfolios",
+        "benefit": "Bespoke Asset Allocation, Fractional Ownership",
+        "description": "Wealth managers construct precise real estate portfolios using fractionalized tokens, enabling specific geographic and sector exposures previously impossible."
+      },
+      {
+        "id": 18,
+        "vertical": "Asset Management",
+        "application": "MMF Tokens as Payment/Settlement Layer",
+        "benefit": "Atomic Settlement (DvP), Yield-Bearing Cash",
+        "description": "Institutional trades settle using tokenized money market funds instead of stablecoins, eliminating cash drag while maintaining yield through atomic DvP settlement."
+      },
+      {
+        "id": 19,
+        "vertical": "Insurance",
+        "application": "Parametric Insurance Smart Contracts",
+        "benefit": "Automated Claims, Reduced Moral Hazard",
+        "description": "Flight delay insurance automatically pays out based on oracle data triggers, eliminating claims processing and providing instant, frictionless customer experience."
+      },
+      {
+        "id": 20,
+        "vertical": "Insurance",
+        "application": "Tokenized Insurance-Linked Securities (ILS)",
+        "benefit": "Market Access, Increased Reinsurance Capacity",
+        "description": "Catastrophe bonds fractionalized as tokens, democratizing access to uncorrelated insurance risk and increasing overall reinsurance market capacity."
+      }
+    ],
+    "regulatory_framework": {
+      "basel_iii_compliance": "Group 1a classification treats tokenized traditional assets with same risk weighting as underlying assets, removing capital penalties for banks.",
+      "regulatory_sandboxes": "Singapore's Project Guardian and EU's DLT Pilot Regime provide controlled environments for regulatory development and legal precedent.",
+      "legal_finality": "Smart contracts structured as legally binding agreements with on-chain ledger as definitive ownership record."
+    },
+    "infrastructure_safeguards": {
+      "permissioned_defi": "Whitelisted, KYC-verified institutional participation maintaining sovereignty while enabling cross-network efficiency.",
+      "institutional_liquidity": "Separate, professional market-maker capitalized pools for institutional treasury operations beyond public DEX pools.",
+      "surety_bonds": "Protocol governing body secures substantial insurance bonds providing financial recourse guarantees for institutional members.",
+      "regulated_custody": "Specialized digital asset custodians using Multi-Party Computation (MPC) with bonded insurance against security breaches.",
+      "oracle_security": "Decentralized Oracle Networks aggregate data from dozens of independent sources with specialized manipulation insurance coverage."
+    },
+    "future_outlook": {
+      "next_frontiers": "Extension to intellectual property rights, pharmaceutical patents, corporate brand value, and intangible asset tokenization.",
+      "cbdc_integration": "Full integration with central bank digital currencies as risk-free sovereign digital settlement assets.",
+      "composability": "Interconnected ecosystem enabling seamless multi-product, cross-border value transfer chains with minimal friction.",
+      "market_trajectory": "No longer question of if financial assets will be tokenized, but how quickly legacy structures will be rebuilt on tokenized foundation."
+    }
   }
 }
