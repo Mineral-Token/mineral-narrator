@@ -498,5 +498,163 @@
       "composability": "Interconnected ecosystem enabling seamless multi-product, cross-border value transfer chains with minimal friction.",
       "market_trajectory": "No longer question of if financial assets will be tokenized, but how quickly legacy structures will be rebuilt on tokenized foundation."
     }
+  },
+  "live_market_data": {
+    "heading": "Live Market Metrics",
+    "current_price": "$2,753.42",
+    "volume_24h": "$0.00",
+    "liquidity": "$396.47M",
+    "holders": "1.37K",
+    "age": "6 months",
+    "fdv": "$33.47B",
+    "market_cap": "$33.47B",
+    "primary_exchange": "Uniswap (Arbitrum)",
+    "trading_chart": "https://www.geckoterminal.com/arbitrum/pools/0x39d21e21cd3d2c123950fa28be350634572e40b7fc05b61f587ef1d4a4f1441a",
+    "note": "Currently trading exclusively on Uniswap with deep liquidity. Additional exchange listings planned."
+  },
+  "tokenomics": {
+    "heading": "Token Economics",
+    "supply_breakdown": {
+      "circulating_supply": "1%",
+      "reserve_supply": "99%",
+      "usage": "Circulating supply primarily used for OTC trades"
+    },
+    "minting_burning": {
+      "minting_process": "Tokens minted when in-ground mineral assets are tokenized on 1:1 basis",
+      "burning_process": "Tokens burned when underlying minerals are extracted/mined",
+      "mechanism": "Maintains direct correlation between token supply and physical asset backing"
+    },
+    "inflation_rate": "Variable, depends on underlying mineral price appreciation and extraction rates",
+    "fee_structure": {
+      "network_fees": "Up to 50 basis points (0.50%)",
+      "current_rate": "Zero fees as of now",
+      "liquidity_fee": "Covers setup, validation, and conversion of mineral assets into tradable tokens",
+      "gas_fees": "Covers ongoing support, compliance, and transaction costs on crypto exchanges"
+    },
+    "redemption_process": "Direct redemption rights for underlying mineral assets through verified custodial partners"
+  },
+  "validator_program": {
+    "heading": "MXTK Asset Validator Program",
+    "description": "A game-theoretic framework for decentralized due diligence using expert validators to verify mineral asset authenticity, ownership, and value before tokenization.",
+    "validator_roles": {
+      "generalist_validator": "Entry-level role for users staking minimum MXTK tokens, reviews AI/MCP data packets and public information",
+      "certified_specialist": "Validators with verified professional credentials (geologists, auditors, legal experts) whose votes carry greater weight in their field",
+      "validation_syndicates": "Multi-signature groups pooling reputation and capital for collaboration and risk-sharing"
+    },
+    "economic_model": {
+      "asset_complexity_score": "ACS rating 1-10 based on asset type, jurisdictional risk, value, and data quality",
+      "staking_requirements": "Required Stake = Base Stake × ACS",
+      "integrity_fee": "Base prize paid by MXTK treasury, fixed amount scaled by ACS, rewarded regardless of outcome",
+      "minting_bonus": "Success prize up to 0.75% of tokenized value, paid by asset owner only if validation succeeds"
+    },
+    "validation_process": {
+      "due_diligence_period": "Up to 120 days for validator analysis and voting",
+      "final_call_period": "14 days for final vote adjustments",
+      "challenge_period": "30 days for validators to challenge provisional outcomes",
+      "arbitration_round": "Binding decision by randomized larger validator pool if challenged"
+    },
+    "penalties_slashing": {
+      "against_consensus": "25-50% stake slash for voting against final consensus",
+      "losing_arbitration": "Challengers lose entire bond, redistributed to winners",
+      "inactivity": "Partial slash and reputation loss for staking without voting"
+    },
+    "reward_vesting": {
+      "mirror_vesting": "Validator rewards vest on same schedule as client token issuance",
+      "cliff_period": "12-month cliff before any rewards become liquid",
+      "utility_during_lockup": "Locked rewards can boost validator stake weight and governance voting",
+      "clawback_provision": "Protocol reserves right to claw back rewards for proven misconduct"
+    }
+  },
+  "technical_infrastructure": {
+    "heading": "Technical Architecture",
+    "blockchain": "Arbitrum (Layer 2)",
+    "data_storage": "All tokenization records stored on IPFS for immutable provenance",
+    "smart_contract": "https://arbiscan.io/token/0x3e4ffeb394b371aaaa0998488046ca19d870d9ba#code",
+    "traceability": {
+      "blockchain_records": "All ownership transfers and asset data permanently recorded on Arbitrum",
+      "ipfs_storage": "Asset documentation, geological reports, and validation records stored on distributed IPFS network",
+      "oracle_integration": "Decentralized Oracle Networks provide tamper-proof external data feeds"
+    },
+    "ai_screening": {
+      "databases": "References geological surveys, mining registries, legal title databases, and compliance frameworks",
+      "validation_process": "AI-powered analysis of 43-101 reports, JORC reports, and SKR documentation",
+      "continuous_monitoring": "Ongoing assessment of asset performance and regulatory compliance"
+    }
+  },
+  "asset_validation": {
+    "heading": "Asset Validation & Audit Framework",
+    "validator_credentials": {
+      "certified_geologists": "Licensed professionals from recognized geological societies",
+      "legal_experts": "Qualified attorneys specializing in mining law and mineral rights",
+      "financial_auditors": "Certified public accountants and asset valuation specialists"
+    },
+    "third_party_audits": {
+      "technology_audits": "Smart contract security audits by leading blockchain security firms",
+      "physical_asset_audits": "On-site verification by independent geological survey companies",
+      "compliance_audits": "Regular reviews by regulatory compliance specialists"
+    },
+    "verification_methodology": {
+      "multi_stage_process": "Initial AI screening, expert validator review, challenge period, and final arbitration",
+      "documentation_requirements": "43-101 technical reports, JORC compliance, Safe Keeping Receipts (SKR)",
+      "consensus_mechanism": "80% weighted vote threshold required for asset approval"
+    }
+  },
+  "roadmap_milestones": {
+    "heading": "Development Roadmap",
+    "q4_2025": {
+      "target": "Tokenize >$350B additional mineral assets",
+      "focus": "Client acquisition and ecosystem growth with financial institutions",
+      "partnerships": "Expanding validator network and institutional partnerships"
+    },
+    "q1_2026": {
+      "major_announcement": "Strategic partnership announcement planned",
+      "details": "Significant institutional collaboration to be revealed"
+    },
+    "ongoing_development": {
+      "exchange_listings": "Additional DEX and CEX listings beyond Uniswap",
+      "geographic_expansion": "International mineral asset onboarding",
+      "technology_upgrades": "Enhanced AI validation and oracle integration"
+    }
+  },
+  "legal_governance": {
+    "heading": "Legal Structure & Governance",
+    "corporate_structure": {
+      "jurisdiction": "Panama Entity",
+      "regulatory_domicile": "Operating under Panama corporate law",
+      "compliance_framework": "International AML/KYC standards and mineral trading regulations"
+    },
+    "governance_model": {
+      "token_voting": "No direct token holder voting mechanisms currently implemented",
+      "board_structure": "Traditional corporate board of directors oversight",
+      "dao_elements": "Future decentralized governance features under consideration"
+    },
+    "compliance_standards": {
+      "kyc_aml": "Know Your Customer and Anti-Money Laundering protocols for all participants",
+      "regulatory_frameworks": "Basel III compliance for institutional participants",
+      "legal_finality": "Smart contracts structured as legally binding agreements"
+    }
+  },
+  "risk_disclosures": {
+    "heading": "Risk Factors",
+    "market_risks": {
+      "commodity_volatility": "Underlying mineral prices subject to market fluctuations",
+      "liquidity_risk": "Limited exchange listings may impact token liquidity",
+      "correlation_risk": "Token value tied to physical mineral asset performance"
+    },
+    "regulatory_risks": {
+      "jurisdiction_changes": "Evolving cryptocurrency and commodity regulations",
+      "compliance_costs": "Ongoing regulatory compliance may impact returns",
+      "cross_border_issues": "International mineral rights subject to local law changes"
+    },
+    "operational_risks": {
+      "validator_consensus": "Risk of validator disagreement or collusion",
+      "smart_contract_risk": "Technical vulnerabilities in blockchain infrastructure",
+      "custody_risk": "Physical asset storage and security considerations"
+    },
+    "investment_warnings": {
+      "not_investment_advice": "All information provided for educational purposes only",
+      "accredited_investors": "May be restricted to qualified institutional and accredited investors",
+      "loss_of_capital": "Possible total loss of invested capital in adverse scenarios"
+    }
   }
 }
