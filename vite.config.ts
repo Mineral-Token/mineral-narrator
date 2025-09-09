@@ -5,8 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // GitHub Pages deployment configuration
-  base: mode === 'production' ? '/mineral-narrator/' : '/',
+  // Custom domain deployment configuration
+  base: '/',
   server: {
     host: "::",
     port: 8080,
