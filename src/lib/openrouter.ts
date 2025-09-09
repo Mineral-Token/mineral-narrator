@@ -5,23 +5,8 @@ interface ChatMessage {
   content: string;
 }
 
-// Simulated knowledge base - in a real implementation, this would be loaded from the vector database
-const mineralTokenKnowledgeBase = {
-  overview: "MXTK stands for Mineral Token, a pioneering asset-backed cryptocurrency that unlocks liquidity for mineral asset owners worldwide through 1:1 tokenization of verified mineral assets.",
-  problem: "Traditional mineral asset monetization often requires selling ownership, finding trustworthy buyers, and limited financing options for both mined and unmined assets.",
-  solution: "MXTK offers liquidity by minting 1:1 asset-backed tokens that can be traded on crypto marketplaces while owners retain their mineral assets.",
-  process: [
-    "Third-party experts independently appraise and validate mineral assets",
-    "Convert mineral assets to MXTK tokens on 1:1 basis and secure SKR/deeds", 
-    "Trade or sell tokens on global crypto exchanges for instant liquidity"
-  ],
-  requirements: ["43-101 Report", "JORC Report", "SKR (Safe Keeping Receipt)"],
-  stats: {
-    assetsCommitted: "$19+ Billion",
-    tokenRatio: "1:1 asset-backed",
-    coverage: "Global mineral network"
-  }
-};
+// Load knowledge base from JSON file
+import knowledgeBaseData from '@/data/knowledge-base.json';
 
 const OPENROUTER_API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY || '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';
 
@@ -34,10 +19,9 @@ STORYTELLING APPROACH:
 - Connect with users emotionally while maintaining accuracy
 
 KNOWLEDGE BASE CONTEXT:
-${JSON.stringify(mineralTokenKnowledgeBase, null, 2)}
+${JSON.stringify(knowledgeBaseData, null, 2)}
 
-CITING SOURCES:
-- For information from the knowledge base: cite as "Mineral-Token.com"
+GUIDELINES:
 - Always provide accurate, verified information
 - If you don't know something, acknowledge limitations
 
@@ -107,9 +91,9 @@ export async function askAI(messages: ChatMessage[]): Promise<string> {
     if (userMessageLower.includes('how') && userMessageLower.includes('work')) {
       fallbackResponse = "Let me tell you the story of how MXTK works... Imagine you're a mine owner in Australia with significant gold deposits. Traditionally, you'd need to extract and sell the gold to access its value. But with MXTK, we create a bridge between your physical assets and the digital economy. Our expert appraisers validate your mineral assets using industry standards like 43-101 reports, then we mint tokens on a 1:1 basis with your verified assets. These tokens can then be traded on crypto exchanges worldwide, giving you instant liquidity while you retain ownership of your mineral wealth.";
     } else if (userMessageLower.includes('invest') || userMessageLower.includes('buy')) {
-      fallbackResponse = "Picture the global mineral market - it's valued at over $19 billion and growing exponentially as demand for rare earth elements, precious metals, and battery minerals soars with the green energy transition. When you invest in MXTK, you're not just buying a token - you're gaining exposure to a diversified portfolio of verified mineral assets worldwide. Each token represents real, tangible wealth stored in the earth, from lithium deposits powering electric vehicles to rare earth elements essential for renewable energy infrastructure.";
+      fallbackResponse = "Picture the global mineral market - with over $33 billion in committed assets at launch and exponentially growing demand for rare earth elements, precious metals, and battery minerals driven by the green energy transition. When you invest in MXTK, you're not just buying a token - you're gaining exposure to a diversified portfolio of verified mineral assets worldwide. Each token represents real, tangible wealth stored in the earth, from lithium deposits powering electric vehicles to rare earth elements essential for renewable energy infrastructure.";
     } else {
-      fallbackResponse = "I apologize, but I'm having trouble connecting to provide you with the most up-to-date information right now. However, I can share that MXTK represents a revolutionary approach to mineral asset tokenization, backed by over $19 billion in committed mineral assets. Would you like to know more about how our 1:1 asset-backed tokenization works, or are you curious about investment opportunities?";
+      fallbackResponse = "I apologize, but I'm having trouble connecting to provide you with the most up-to-date information right now. However, I can share that MXTK represents a revolutionary approach to mineral asset tokenization, backed by over $33 billion in committed mineral assets. Would you like to know more about how our 1:1 asset-backed tokenization works, or are you curious about investment opportunities?";
     }
     
     await logger.logConversation(userMessage, fallbackResponse, 'fallback');

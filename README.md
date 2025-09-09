@@ -165,7 +165,7 @@ npm run preview
 ### AI Conversation System
 
 - **Storytelling Approach**: Explains technical concepts through engaging narratives
-- **Knowledge Base**: Contains comprehensive MXTK information ($19+ billion in committed assets)
+- **Knowledge Base**: Contains comprehensive MXTK information ($33+ billion in committed assets)
 - **Fallback Responses**: Provides helpful responses when AI service is unavailable
 - **Session Management**: Tracks conversations with unique session IDs
 

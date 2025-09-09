@@ -159,7 +159,7 @@ const Terms = () => {
                 <p className="font-semibold">
                   Email: <a href="mailto:legal@mineral-token.com" className="text-primary hover:underline">legal@mineral-token.com</a>
                 </p>
-                <p>Our legal team responds within 24 hours to all inquiries.</p>
+                <p>Our legal team responds within 72 hours to all inquiries.</p>
               </section>
 
               <div className="mt-8 p-4 bg-primary/10 rounded-lg">

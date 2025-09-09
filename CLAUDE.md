@@ -121,7 +121,7 @@ The application contains hardcoded knowledge about:
 - Mineral Token overview and value proposition
 - Asset tokenization process (1:1 backing)
 - Required documentation (43-101 reports, JORC reports, SKR)
-- Market statistics ($19+ billion in committed assets)
+- Market statistics ($33+ billion in committed assets)
 
 ### Chat Flow
 1. User starts with hero section prompts or custom message

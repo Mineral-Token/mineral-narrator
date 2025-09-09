@@ -1,0 +1,211 @@
+{
+  "hero": {
+    "title": "Unlocking Liquidity for Your Global Mineral Holdings",
+    "subtitle": "Empowering mineral owners worldwide with a seamless path to liquidity.",
+    "description": "MXTK, short for Mineral Token, stands as a pioneering force in the realm of asset-backed cryptocurrency, dedicated to unlocking liquidity for mineral asset owners across the globe. Through a seamless and transparent process, we empower asset holders by minting 1:1 asset-backed Mineral Tokens, facilitating their trade on prominent crypto marketplaces. As your partner in liquidity solutions, MXTK transforms mineral wealth into a tangible and tradeable digital currency, bridging the gap between traditional mineral assets and the evolving world of cryptocurrency."
+  },
+  "opportunity": {
+    "heading": "Opportunity",
+    "points": [
+      "Vast mineral wealth exists worldwide both within mines and unmined.",
+      "Prices and values of mines and minerals are rising exponentially.",
+      "Monetizing these assets could unlock significant capital for wealth generation pre-extraction."
+    ]
+  },
+  "problem": {
+    "heading": "The Problem",
+    "points": [
+      "Selling assets can lead to loss of ownership and control.",
+      "Finding trustworthy buyers can be challenging.",
+      "Traditional financing options are limited for both mined and unmined assets."
+    ]
+  },
+  "solution": {
+    "heading": "The Solution",
+    "description": "We offer mineral asset owners liquidity by minting 1:1 asset-backed Mineral Tokens (MXTK), which can be traded on crypto marketplaces."
+  },
+  "investment_opportunity": {
+    "heading": "Investment Opportunity",
+    "subpoints": [
+      "Global mineral demand is soaring; with Mineral Token (MXTK), investors can tap into this rising market.",
+      "Our tokens offer a diversified mineral asset blend, reducing risks and increasing the potential for long-term gains.",
+      "Mineral Token (MXTK) links investors to global mineral assets, offering diverse opportunities.",
+      "As mineral asset owners gain liquidity, investors can profit from rising mineral demand and prices, benefiting both parties."
+    ]
+  },
+  "how_it_works": {
+    "heading": "How it works",
+    "steps": [
+      "Our Third-party experts independently appraise and validate mineral assets. (Asset Verification)",
+      "Convert your mineral assets to MXTK tokens on a 1:1 basis & secure the SKR and/or deeds. (MXTK Tokens & Lock)",
+      "Trade or sell tokens on global crypto exchanges. (Liquidity)"
+    ]
+  },
+  "requirements": {
+    "heading": "What is required",
+    "options": [
+      "43-101 REPORT: Includes detailed geological and technical assessments, ensuring transparency and reliability.",
+      "JORC REPORT: Provides guidelines for the public reporting of exploration results, mineral resources, and ore reserves.",
+      "SKR (SAFE KEEPING RECEIPT): Proves ownership of mineral assets securely held."
+    ]
+  },
+  "fees": {
+    "heading": "Pricing and Fees",
+    "structure": [
+      "Liquidity Fee: The Liquidity Fee covers the setup, validation, and conversion of your mineral assets into tradable tokens on crypto exchanges, streamlining liquidity generation.",
+      "Network Gas Fee: The Network Gas Fee covers ongoing support, compliance, and transaction costs for selling Tokens on crypto exchanges, ensuring your assets' continued support and compliance on Mineral Token.",
+      "No Hidden Costs: At Mineral Token, we value transparency with no hidden fees."
+    ]
+  },
+  "about": {
+    "heading": "About",
+    "content": "Mineral Token was founded by the leadership of BV INNOVATION, which has deep experience in cryptocurrency, finance, and working in the mining industry. Over $33 Billion in mineral assets were committed at launch.\n\n\"BV INNOVATION is making big bets in AI, mineral extraction and refinement, and clean energy solutions, among others. As the world moves from fossil fuels to new energy solutions, we are only beginning the journey. With Mineral Token, stakeholders in the marketplace can move faster to bring the resources to market. We see it as a natural extension of our investment strategy.\" — Bo Vargas"
+  },
+  "team": {
+    "heading": "Meet the Team",
+    "members": [
+      {
+        "name": "Bo Vargas",
+        "title": "Founder and Managing Director",
+        "bio": "Bo's background spans military, technology, entrepreneurship, investment, AI, financial systems — and he launched BV Innovation."
+      },
+      {
+        "name": "Todd Davison",
+        "title": "Director",
+        "bio": "Todd has built global marketing agencies and developed growth strategies with large brands."
+      },
+      {
+        "name": "Daniel Kirichanski",
+        "title": "Vice President of Engineering",
+        "bio": "Previously at Ripple and PayPal, Daniel brings blockchain infrastructure and DeFi performance expertise."
+      }
+    ]
+  },
+  "careers": {
+    "heading": "Careers",
+    "content": "Mineral Token is a rapidly growing and innovative cryptocurrency company redefining the financial landscape through cutting-edge blockchain technologies. We are seeking seasoned leaders for roles including Vice President of Engineering ($250k–$400k, Austin or Miami), VP of Operations ($260k–$400k), and VP of Risk Management ($220k–$380k). Benefits: competitive salary, stock options, health plans, flexible work, professional growth."
+  },
+  "resources": [
+    {
+      "title": "White Paper: Bridging the Mineral Divide",
+      "description": "An in-depth exploration of MXTK protocol, token economics, liquidity providers, traceability, and the electric era.",
+      "link": "https://www.mineral-token.com/resources/bridging-the-mineral-divide"
+    },
+    {
+      "title": "Project Summary: Unlocking Liquidity for Mineral Assets",
+      "description": "Overview of the business problem, blockchain solution, and $33 B milestone at launch.",
+      "link": "https://www.mineral-token.com/resources/blog-post-title-one-zb9xg"
+    }
+  ],
+  "faq": {
+    "heading": "FAQ",
+    "entries": [
+      {
+        "question": "How to find MXTK",
+        "answer": "Exchange: https://app.uniswap.org/explore/tokens/arbitrum/0x3e4ffeb394b371aaaa0998488046ca19d870d9ba | CoinGecko: https://www.coingecko.com/en/coins/mineral-token | Blockchain Explorer: https://arbiscan.io/token/0x3e4ffeb394b371aaaa0998488046ca19d870d9ba"
+      },
+      {
+        "question": "How to set up a wallet in Metamask",
+        "answer": "Install MetaMask, create wallet, backup seed phrase, connect to DApps."
+      },
+      {
+        "question": "How to set up a wallet in Bitget",
+        "answer": "Create account, enable 2FA, generate wallet addresses, fund and trade."
+      }
+    ]
+  },
+  "token_info": {
+    "heading": "Token Information",
+    "contract_address": "0x3e4ffeb394b371aaaa0998488046ca19d870d9ba",
+    "blockchain": "Arbitrum",
+    "trading": {
+      "primary_exchange": "https://app.uniswap.org/explore/tokens/arbitrum/0x3e4ffeb394b371aaaa0998488046ca19d870d9ba",
+      "aggregator": "https://www.coingecko.com/en/coins/mineral-token",
+      "explorer": "https://arbiscan.io/token/0x3e4ffeb394b371aaaa0998488046ca19d870d9ba"
+    }
+  },
+  "contact": {
+    "heading": "Contact Us",
+    "instructions": "Complete the form or reach out via email or messaging.",
+    "email": "info@mineral-token.com",
+    "career_email": "career@mineral-token.com",
+    "social_media": {
+      "telegram": "https://t.me/mineraltoken",
+      "discord": "https://discord.gg/FRewJdvj",
+      "linkedin": "http://www.linkedin.com/company/mineral-token/",
+      "twitter": "https://twitter.com/TokenMineral"
+    }
+  },
+  "ecosystem": {
+    "heading": "Ecosystem",
+    "title": "Welcome to the Mineral Token Ecosystem",
+    "intro": "The Mineral Token (MXTK) ecosystem brings together a diverse array of participants, including crypto buyers, sellers, funds, banks, financial institutions, the minerals and mining industry, and government regulators. Our goal is to create a vibrant financial ecosystem that leverages blockchain technology to unlock the true value of mineral assets.",
+    "participants": [
+      {
+        "role": "Mineral Owners",
+        "benefits": [
+          "Immediate Liquidity: Access capital without selling underlying mineral assets.",
+          "Global Reach: Attract a global investor base through tokenization.",
+          "Sustainability: Improve financial stability and fund sustainable mining practices."
+        ]
+      },
+      {
+        "role": "Mining Companies",
+        "benefits": [
+          "Financial Flexibility: Use tokenized assets as collateral for loans and investments.",
+          "Market Expansion: Tap into new markets and attract diverse investors.",
+          "Resource Management: Efficiently manage and monetize mineral resources."
+        ]
+      },
+      {
+        "role": "Financial Consultants",
+        "benefits": [
+          "Client Portfolio Enhancement: Offer clients unique investment opportunities in tokenized minerals.",
+          "Risk Management: Diversify client portfolios with stable, asset-backed investments.",
+          "Industry Expertise: Leverage deep industry knowledge to provide informed advice."
+        ]
+      },
+      {
+        "role": "Crypto Buyers and Sellers",
+        "benefits": [
+          "Booming Demand for Minerals: Participate in a market where the demand for essential minerals is skyrocketing.",
+          "Rising Prices: Take advantage of the increasing prices of minerals driven by global demand.",
+          "Hedge Against Inflation: Protect your investments with asset-backed tokens that offer a hedge against inflation."
+        ]
+      },
+      {
+        "role": "Fintech Ecosystem",
+        "benefits": [
+          "Versatile Currency: Use MXTK tokens as a currency for various transactions.",
+          "Blockchain Integration: Integrate MXTK tokens into fintech applications for enhanced utility.",
+          "Technological Advancement: Benefit from cutting-edge blockchain technology ensuring secure and transparent transactions."
+        ]
+      },
+      {
+        "role": "DeFi Lenders",
+        "benefits": [
+          "DeFi Lending: Utilize MXTK tokens in decentralized finance (DeFi) lending platforms for loans and other financial services.",
+          "Asset-Backed Stability: Leverage a currency backed by high-demand minerals that appreciate in value, avoiding the pitfalls of inflation and extreme price swings.",
+          "Increased Liquidity: Enhance liquidity options within the DeFi space with stable, asset-backed tokens."
+        ]
+      },
+      {
+        "role": "Funds and Investment Firms",
+        "benefits": [
+          "High-Value Assets: Access to tokenized mineral assets representing significant value.",
+          "Risk Mitigation: Diversify portfolios with stable, asset-backed investments.",
+          "Growth Potential: Capitalize on the increasing global demand for minerals."
+        ]
+      },
+      {
+        "role": "Banks and Financial Institutions",
+        "benefits": [
+          "New Revenue Streams: Offer clients unique investment opportunities in tokenized mineral assets.",
+          "Custodial Services: Provide secure storage and management of digital tokens.",
+          "Stable Asset Base: Integrate minerals as a long-term, stable asset to offset risks in traditional investments such as commercial real estate."
+        ]
+      }
+    ],
+    "cta": "Join the Mineral Token (MXTK) ecosystem and be part of a transformative journey that unlocks the true potential of mineral assets. Together, we can create a thriving financial ecosystem that benefits all participants, from traders and investors to funds, financial institutions, the mining industry, and government regulators. For more information about joining our ecosystem, please contact us at our Contact Us page."
+  }
+}
