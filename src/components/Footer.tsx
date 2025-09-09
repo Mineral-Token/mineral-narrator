@@ -26,10 +26,12 @@ const Footer = ({ onStartChat }: { onStartChat: (initialMessage?: string) => voi
               Unlocking liquidity for global mineral holdings through innovative 1:1 asset-backed tokenization.
             </p>
             <div className="flex gap-4">
-              <Button variant="outline" size="sm">
-                <ShieldCheckIcon className="w-4 h-4 mr-2" />
-                Whitepaper
-              </Button>
+              <a href="/MXTK+White+Paper.pdf" download="MXTK-White-Paper.pdf">
+                <Button variant="outline" size="sm">
+                  <ShieldCheckIcon className="w-4 h-4 mr-2" />
+                  Whitepaper
+                </Button>
+              </a>
             </div>
           </div>
 
