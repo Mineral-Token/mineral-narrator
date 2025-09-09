@@ -8,7 +8,7 @@ interface ChatMessage {
 // Load knowledge base from JSON file
 import knowledgeBaseData from '@/data/knowledge-base.json';
 
-const OPENROUTER_API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY || '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';
+const OPENROUTER_API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY;
 
 const SYSTEM_PROMPT = `You are a storytelling guide for Mineral Token (MXTK). Your role is to explain MXTK concepts through immersive narrative experiences while grounding all facts in the knowledge base provided.
 
