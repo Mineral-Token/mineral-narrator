@@ -1,4 +1,6 @@
 import { logger } from './logger';
+import { aiRateLimiter } from './rateLimiter';
+import { sanitizeUserInput, validateApiKey, truncateText, generateSecureSessionId } from './security';
 
 interface ChatMessage {
   role: 'user' | 'assistant' | 'system';
@@ -33,8 +35,29 @@ TONE & STYLE:
 
 export async function askAI(messages: ChatMessage[]): Promise<string> {
   const effectiveApiKey = OPENROUTER_API_KEY;
-  const userMessage = messages[messages.length - 1]?.content || '';
+  let userMessage = messages[messages.length - 1]?.content || '';
   const modelName = 'mistralai/mistral-7b-instruct';
+  
+  // Sanitize and validate user input
+  userMessage = truncateText(sanitizeUserInput(userMessage));
+  
+  // Validate API key format
+  if (effectiveApiKey && !validateApiKey(effectiveApiKey)) {
+    const invalidKeyResponse = "API configuration error. Please contact support.";
+    await logger.logConversation(userMessage, invalidKeyResponse, 'invalid-key');
+    return invalidKeyResponse;
+  }
+  
+  // Generate a secure session identifier for rate limiting
+  const sessionId = generateSecureSessionId();
+  
+  // Check rate limiting
+  if (!aiRateLimiter.isAllowed(sessionId)) {
+    const timeUntilReset = Math.ceil(aiRateLimiter.getTimeUntilReset(sessionId) / 1000);
+    const rateLimitResponse = `I'm receiving a lot of requests right now. Please wait ${timeUntilReset} seconds before sending another message. This helps me provide better service to everyone!`;
+    await logger.logConversation(userMessage, rateLimitResponse, 'rate-limited');
+    return rateLimitResponse;
+  }
   
   if (!effectiveApiKey) {
     const fallbackResponse = "I'm currently experiencing technical difficulties connecting to my AI service. Please try again in a moment, or contact support if the issue persists.";
