@@ -17,7 +17,17 @@ class Logger {
   }
 
   private generateSessionId(): string {
-    return `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    // Securely generate a random string for session IDs
+    const randomStr = Logger.secureRandomString(12);
+    return `session_${Date.now()}_${randomStr}`;
+  }
+
+  private static secureRandomString(length: number): string {
+    // generate `length` secure random bytes, and encode them as base36 for compactness
+    const bytes = new Uint8Array(length);
+    window.crypto.getRandomValues(bytes);
+    // Convert each byte to a base36 character, join into string, and slice to desired length
+    return Array.from(bytes, b => b.toString(36)).join('').substr(0, length);
   }
 
   async logConversation(userMessage: string, aiResponse: string, apiModel?: string) {
