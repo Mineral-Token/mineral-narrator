@@ -50,6 +50,8 @@ npm run dev
 
 The application will be available at `http://localhost:8080`
 
+Live production site: https://mineral-token.com
+
 ## Available Scripts
 
 | Command | Description |
