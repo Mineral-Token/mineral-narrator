@@ -92,7 +92,7 @@ export function escapeSpecialChars(input: string): string {
 export function isSafeContent(content: string): boolean {
   // Check for common XSS patterns
   const suspiciousPatterns = [
-    /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
+    /<script\b[^<]*(?:(?!<\/script[\s\S]*?>)[^<]*)*<\/script[\s\S]*?>/gi,
     /javascript:/gi,
     /on\w+\s*=/gi,
     /data:text\/html/gi,
